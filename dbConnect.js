@@ -7,14 +7,17 @@ const dbConnect = () => {
   mongoose.connect(DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+
   });
 
   const database = mongoose.connection;
+  
   database.on("error", (error) => {
     console.log(error);
   });
 
   database.once("connected", () => {
+
     console.log(`Database connected successfully`);
   });
 };
