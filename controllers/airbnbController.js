@@ -1,5 +1,10 @@
-const Model = require("../models/airbnb.js");
+const airbnbModel = require("../models/airbnb.js");
 
-const getAllData = () =>{
-    
+const getAllData = async () => {
+  const data = await airbnbModel.find();
+  return data;
+};
+
+module.exports {
+    getAllData
 }
